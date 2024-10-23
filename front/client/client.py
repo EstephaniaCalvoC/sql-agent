@@ -1,7 +1,7 @@
 import uuid
 import requests
 
-from common import logger
+from client.common import logger
 
 
 class SQLAgentClient:
@@ -20,9 +20,3 @@ class SQLAgentClient:
             raise Exception(f"Ups, something went wrong: {raw_response}")
         
         return {"answer": raw_response.get('answer'), "error_message": raw_response.get('error_message')}
-    
-    
-if __name__ == "__main__":
-    # Test the client
-    client = SQLAgentClient()
-    print(client.query("How many albums does Led Zeppelin have?"))
