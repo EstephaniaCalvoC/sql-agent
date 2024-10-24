@@ -1,7 +1,9 @@
 # SQL Agent - Service
 
 Server for the SQL Agent. It's built with FastAPI and LangGraph.
+
 ## Set up
+
 Save the following environment variables in a `.env` file:
 
 ```bash
@@ -15,23 +17,16 @@ LANGCHAIN_PROJECT=<your-langchain-project>
 
 ## How to run
 
-**Locally:**
-
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-python app/run_api.py
-```
-
-**Docker:**
-
-```bash
-docker compose watch
+python src/run_api.py
 ```
 
 ## Test
 
 ```bash
-python -m pytest tests
+cd src
+python -m pytest ../tests
 ```
