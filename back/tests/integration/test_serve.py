@@ -11,7 +11,7 @@ def test_valid_question():
         assert response.status_code == 200
         
         print(f"### Response: {response.json()}")
-        answer = response.json().get("answer")
+        answer = response.json().get("answer", "")
         print(f"### Answer: {answer}")
         
         assert "14" in answer or "fourteen" in answer

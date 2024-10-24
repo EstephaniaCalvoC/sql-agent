@@ -1,7 +1,0 @@
-langchain==0.3.3
-langsmith==0.1.134
-langchain-community==0.3.2
-langchain-openai==0.2.2
-langgraph==0.2.35
-fastapi==0.115.2
-fastapi-cli==0.0.5

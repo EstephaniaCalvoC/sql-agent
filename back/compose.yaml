@@ -1,5 +1,5 @@
 services:
-  agent_service:
+  server:
     build:
       context: .
       dockerfile: Dockerfile
@@ -7,8 +7,5 @@ services:
       - "8000:8000"
     env_file:
       - .env
-    develop:
-      watch:
-        - path: app
-          action: sync+restart
-          target: app
+    container_name: sql_agent_server
+    
