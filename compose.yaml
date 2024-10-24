@@ -1,0 +1,33 @@
+services:
+  api:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    env_file:
+      - ./back/.env
+    ports:
+      - "8000:8000"
+    networks:
+      - local_network
+    container_name: sql_agent_server
+    develop:
+      watch:
+        - path: app
+          action: sync+restart
+          target: app
+  gui:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    env_file:
+      - ./front/.env
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    networks:
+      - local_network
+    container_name: sql_agent_gui
+
+networks:
+  local_network:
