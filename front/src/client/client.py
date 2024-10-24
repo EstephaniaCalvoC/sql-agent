@@ -5,7 +5,7 @@ from client.common import logger
 
 
 class SQLAgentClient:
-    def __init__(self, base_url: str="http://localhost:8000") -> None:
+    def __init__(self, base_url: str) -> None:
         logger.info("Start Client")
         self.base_url = base_url
 

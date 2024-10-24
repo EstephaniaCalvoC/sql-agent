@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 from client.client import SQLAgentClient
 
@@ -7,7 +8,7 @@ APP_ICON = "🔍"
 
 
 def main():
-    client = SQLAgentClient()
+    client = SQLAgentClient(base_url="http://sql_agent_server:8000")
     st.set_page_config(page_title=APP_TITLE, page_icon=APP_ICON)
     st.title(APP_TITLE)
     
@@ -17,11 +18,11 @@ def main():
         if question:
             response = client.query(question)
             if answer := response.get("answer"):
-                st.success(f"{answer}")
+                st.success(f"🙌 {answer}")
             elif error_message := response.get("error_message"):
-                st.error(f"{error_message}")
+                st.error(f"🚨 {error_message}")
         else:
-            st.warning("Please enter a question.")
+            st.warning("⚠️Please enter a question.")
 
 
 if __name__ == "__main__":

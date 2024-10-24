@@ -1,8 +1,19 @@
 # SQL Agent - GUI
 
-Frontend for the SQL Agent. It will be built with Streamlit.
-
-
 ## Set up
+Save the following environment variables in a `.env` file:
+
+```bash
+SQL_AGENT_BASE_URL=<server-base-url>
+```
 
 ## How to run
+
+Page: http://localhost:8501/
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run src/app.py
+```

@@ -1,0 +1,10 @@
+services:
+  gui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    container_name: sql_agent_gui
