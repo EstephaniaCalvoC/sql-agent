@@ -8,7 +8,7 @@ APP_ICON = "🔍"
 
 
 def main():
-    client = SQLAgentClient(base_url="http://sql_agent_server:8000")
+    client = SQLAgentClient(base_url=os.getenv("SQL_AGENT_BASE_URL", "http://localhost:8000"))
     st.set_page_config(page_title=APP_TITLE, page_icon=APP_ICON)
     st.title(APP_TITLE)
     
